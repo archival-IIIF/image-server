@@ -83,4 +83,4 @@ if (process.env.NODE_ENV !== 'production') {
 app.use(router.routes());
 app.listen(parseInt(process.env.IIIF_IMAGE_PORT as string));
 
-logger.info('Started the image service');
+logger.info('Image server started on http://localhost:' + process.env.IIIF_IMAGE_PORT + ' 🚀');
