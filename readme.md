@@ -1,13 +1,18 @@
-# Archival IIIF image
+<p align="center">
+  <a href="https://material-ui.com/" rel="noopener" target="_blank"><img width="150" src="https://archival-iiif.github.io/logos/iiif.png" alt="Material-UI logo"></a>
+</p>
 
-Archival IIIF image server is an implementation of the IIIF Image API.
+<h1 align="center">Archival IIIF image server</h1>
+
+<div align="center">Archival IIIF image server is an implementation of the IIIF Image API.
+</div>
 
 ## Web API
 
 _See also the [IIIF Image API 2.1](https://iiif.io/api/image/2.1/) 
 and the [IIIF Image API 3.0](https://iiif.io/api/image/3.0/)_
 
-**URL**: `[id]/[region]/[size]/[rotation]/[quality].[format]`
+**URL**: `/[id]/[region]/[size]/[rotation]/[quality].[format]`
 
 **Method**: `GET`
 
@@ -18,13 +23,30 @@ E.g. http://localhost:3333/example.jpg/full/!100,100/0/default.jpg
 1. Install
     * [Node.js 14.x LTS](https://nodejs.org/en)
     * [yarn](https://yarnpkg.com) or [npm](https://www.npmjs.com)
-1. Set up the configuration (See .env.example for the example configuration)
+2. Set up the configuration (See .env.example for the example configuration)
     * Copy .env.example to .env and set up the parameters for development
     * Set up the environment variables for production (see above)
     with the environment variables
-1. `yarn install` or `npm install`
-1. Start the application:
-    * Run `yarn run start` or `npm run start`
+3. Install dependencies
+   ```sh
+   // with npm
+   npm install
+   
+   // with yarn
+   yarn install
+   ```
+   
+## Usage
+
+1. Copy your images into the data folder, you defined in the .env file (`IIIF_IMAGE_ROOT_PATH`).
+2. Start the application:
+   ```sh
+   // with npm
+   npm run start
+   
+   // with yarn
+   yarn run start
+   ```
 
 ## Configuration
 
