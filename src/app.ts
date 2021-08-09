@@ -9,8 +9,7 @@ import * as morgan from 'koa-morgan';
 import * as sharp from 'sharp';
 
 import logger from './logger';
-import serveImage from './image/imageServer';
-import {NotImplementedError, RequestError} from './image/errors';
+import {serveImage, NotImplementedError, RequestError, setConcurrency, getSupportedFormats} from '@archival-iiif/image-server-core';
 
 sharp.concurrency(process.env.IIIF_IMAGE_CONCURRENCY ? parseInt(process.env.IIIF_IMAGE_CONCURRENCY) : 0);
 sharp.queue.on('change', queueLength =>
@@ -29,7 +28,7 @@ router.get('/:path/:region/:size/:rotation/:quality.:format', async ctx => {
     const maxSize = Array.isArray(ctx.query.max)
         ? parseInt(ctx.query.max[0])
         : ctx.query.max
-            ? parseInt(ctx.query.max) 
+            ? parseInt(ctx.query.max)
             : null;
 
     const image = await serveImage(path, maxSize, {
