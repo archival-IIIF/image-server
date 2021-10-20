@@ -2,14 +2,14 @@ if (process.env.NODE_ENV !== 'production')
     require('dotenv').config();
 
 import {join} from 'path';
+import logger from './logger';
 
 import * as Koa from 'koa';
 import * as Router from '@koa/router';
 import * as morgan from 'koa-morgan';
 import * as sharp from 'sharp';
 
-import logger from './logger';
-import {serveImage, NotImplementedError, RequestError, setConcurrency, getSupportedFormats} from '@archival-iiif/image-server-core';
+import {serveImage, NotImplementedError, RequestError} from '@archival-iiif/image-server-core';
 
 sharp.concurrency(process.env.IIIF_IMAGE_CONCURRENCY ? parseInt(process.env.IIIF_IMAGE_CONCURRENCY) : 0);
 sharp.queue.on('change', queueLength =>
@@ -82,4 +82,4 @@ if (process.env.NODE_ENV !== 'production') {
 app.use(router.routes());
 app.listen(parseInt(process.env.IIIF_IMAGE_PORT as string));
 
-logger.info('Image server started on http://localhost:' + process.env.IIIF_IMAGE_PORT + ' 🚀');
+logger.info(`Image server started on http://localhost:${process.env.IIIF_IMAGE_PORT} 🚀`);
