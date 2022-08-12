@@ -1,13 +1,13 @@
 if (process.env.NODE_ENV !== 'production')
-    require('dotenv').config();
+    await import('dotenv/config');
 
 import {join} from 'path';
-import logger from './logger';
+import logger from './logger.js';
 
-import * as Koa from 'koa';
-import * as Router from '@koa/router';
-import * as morgan from 'koa-morgan';
-import * as sharp from 'sharp';
+import Koa from 'koa';
+import Router from '@koa/router';
+import morgan from 'koa-morgan';
+import sharp from 'sharp';
 
 import {serveImage, NotImplementedError, RequestError} from '@archival-iiif/image-server-core';
 

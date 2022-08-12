@@ -1,23 +1,24 @@
 {
   "name": "archival-iiif-image",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "private": true,
+  "type": "module",
   "dependencies": {
     "koa": "2.13.4",
     "koa-morgan": "1.0.1",
-    "winston": "3.5.1",
-    "@koa/router": "10.1.1",
-    "@archival-iiif/image-server-core": "2.0.1",
+    "winston": "3.8.1",
+    "dotenv": "16.0.1",
+    "@koa/router": "12.0.0",
+    "@archival-iiif/image-server-core": "2.0.3",
     "@types/node": "16.11.7",
-    "@types/koa": "2.13.4",
+    "@types/koa": "2.13.5",
     "@types/koa-morgan": "1.0.5",
     "@types/koa__router": "8.0.11"
   },
   "devDependencies": {
-    "typescript": "4.5.5",
-    "dotenv": "15.0.0",
-    "nodemon": "2.0.15",
-    "ts-node": "10.4.0"
+    "typescript": "4.7.4",
+    "nodemon": "2.0.19",
+    "ts-node": "10.9.1"
   },
   "scripts": {
     "start": "ts-node ./src/app.ts",
