@@ -9,7 +9,7 @@ COPY . /opt/iiif-image
 WORKDIR /opt/iiif-image
 
 # Install the application
-RUN npm install --production
+RUN npm install --omit=dev
 
 # Transpile the application
 RUN tsc

@@ -1,6 +1,6 @@
 {
   "name": "archival-iiif-image",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "private": true,
   "type": "module",
   "dependencies": {
@@ -9,14 +9,14 @@
     "winston": "3.8.2",
     "dotenv": "16.0.3",
     "@koa/router": "12.0.0",
-    "@archival-iiif/image-server-core": "2.0.6",
-    "@types/node": "16.11.66",
+    "@archival-iiif/image-server-core": "2.0.7",
+    "@types/node": "18.11.9",
     "@types/koa": "2.13.5",
     "@types/koa-morgan": "1.0.5",
     "@types/koa__router": "12.0.0"
   },
   "devDependencies": {
-    "typescript": "4.8.4",
+    "typescript": "4.9.3",
     "nodemon": "2.0.20",
     "ts-node": "10.9.1"
   },
