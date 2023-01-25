@@ -21,7 +21,7 @@ E.g. http://localhost:3333/example.jpg/full/!100,100/0/default.jpg
 ## Installation
 
 1. Install
-    * [Node.js 14.x LTS](https://nodejs.org/en)
+    * [Node.js 18.x LTS](https://nodejs.org/en)
     * [yarn](https://yarnpkg.com) or [npm](https://www.npmjs.com)
 2. Set up the configuration (See .env.example for the example configuration)
     * Copy .env.example to .env and set up the parameters for development
@@ -75,13 +75,8 @@ E.g. http://localhost:3333/example.jpg/full/!100,100/0/default.jpg
             <td>E.g. <code>/data</code></td>
         </tr>
         <tr>
-            <td>IIIF_IMAGE_LOG_LEVEL</td>
-            <td>Winston log level</td>
-            <td>E.g. <code>debug</code> see <a href="https://github.com/winstonjs/winston#logging-levels">here</a></td>
-        </tr>
-        <tr>
             <td>IIIF_IMAGE_CONCURRENCY</td>
-            <td>parameter, which controls the number of threads libvips can use for image processing.</td>
+            <td>Parameter which controls the number of threads libvips can use for image processing</td>
             <td>By default it takes the number of CPU cores available. Specify 0 to make it explicit.</td>
         </tr>
     </tbody>

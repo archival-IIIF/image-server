@@ -1,4 +1,4 @@
-FROM node:16-alpine AS builder
+FROM node:18-alpine AS builder
 
 # Install global NPM tooling
 RUN npm install typescript -g
@@ -15,11 +15,11 @@ RUN npm install --omit=dev
 RUN tsc
 
 # Create the actual image
-FROM node:16-alpine
+FROM node:18-alpine
 
 # Copy application build from builder
 COPY --from=builder /opt/ /opt/
 WORKDIR /opt/iiif-image
 
 # Run the application
-CMD ["node", "src/app.js"]
+CMD ["node", "app.js"]
